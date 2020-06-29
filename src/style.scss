@@ -1,0 +1,8 @@
+@use "vars";
+@use "scales";
+@use "functions";
+@use "typography";
+
+.test {
+  font-size: functions.mod(2);
+}

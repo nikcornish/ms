@@ -1,0 +1,21 @@
+@use "vars";
+@use "elements";
+@use "functions";
+
+@each $el in elements.$headings {
+  $index: index(elements.$headings, $el);
+  #{$el} {
+    @if vars.$round {
+      font-size: floor(functions.mod($index));
+    } @else {
+      font-size: functions.mod($index);
+    }
+    
+  }
+}
+
+@each $el in elements.$generals {
+  #{$el} {
+    font-size: functions.mod(0);
+  }
+}
