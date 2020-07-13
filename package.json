@@ -1,12 +1,13 @@
 {
   "name": "@nikcornish/ms",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "sass src/style.scss:dist/style.css --watch",
-    "build": "sass src/style.scss:dist/style.css"
+    "build": "sass src/style.scss:dist/style.css",
+    "publish": "npm publish --access=public"
   },
   "author": "",
   "license": "ISC",
