@@ -1,4 +1,4 @@
-@use "vars";
-@use "scales";
-@use "functions";
-@use "typography";
+@forward "vars";
+@forward "scales";
+@forward "functions";
+@forward "typography";
