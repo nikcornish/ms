@@ -1,6 +1,4 @@
-@use "vars";
 @use "elements";
-@use "functions";
 
 @each $el in elements.$headings {
   $index: index(elements.$headings, $el);

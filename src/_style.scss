@@ -8,8 +8,8 @@ $scales: (
 );
 
 $base: 14px !default;
+$ratio: goldenRatio !default; // string or number
 $scale: minorThird !default;
-$multiplier: map-get($scales, $scale);
 $round: false !default;
 
 // POWER function in sass: https://css-tricks.com/snippets/sass/power-function/
@@ -25,5 +25,11 @@ $round: false !default;
 
 // CALCULATES a step in a modular scale
 @function mod($count) {
-  @return $base * power($multiplier, $count);
+  @if type-of($ratio) == string {
+    @return $base * power(map-get($scales, $ratio), $count);
+  } @else if type-of($ratio) == number {
+    @return $base * power($ratio, $count);
+  } @else {
+    @error "Please use a value from the $scales map or a number";
+  } 
 }
