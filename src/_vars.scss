@@ -1,6 +1,6 @@
 @use "scales";
 
-$base: 14px;
-$scale: minorThird;
+$base: 14px !default;
+$scale: minorThird !default;
 $multiplier: map-get(scales.$scales, $scale);
-$round: false;
+$round: false !default;
