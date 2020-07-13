@@ -1,4 +1,16 @@
-@use "vars";
+$scales: (
+  minorThird: 1.2,
+  majorThird: 1.250,
+  perfectFourth: 1.333,
+  perfectFifth: 1.500,
+  goldenRatio: 1.618,
+  octave: 2,
+);
+
+$base: 14px !default;
+$scale: minorThird !default;
+$multiplier: map-get($scales, $scale);
+$round: false !default;
 
 // POWER function in sass: https://css-tricks.com/snippets/sass/power-function/
 @function power($number, $exponent) {
@@ -13,5 +25,5 @@
 
 // CALCULATES a step in a modular scale
 @function mod($count) {
-  @return vars.$base * power(vars.$multiplier, $count);
+  @return $base * power($multiplier, $count);
 }
