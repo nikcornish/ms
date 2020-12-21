@@ -1,34 +1,36 @@
-$scales: (
-  minorThird: 1.2,
-  majorThird: 1.250,
-  perfectFourth: 1.333,
-  perfectFifth: 1.500,
-  goldenRatio: 1.618,
-  octave: 2,
-);
+@use "scales";
+@use "power";
+@use "variables";
 
-$base: 14px !default;
-$ratio: goldenRatio !default; // string or number
-$round: false !default;
+// Calculates a step in a modular scale
+@function mod($count, $round: variables.$round) {
+  
+  $result: 0;
 
-// POWER function in sass: https://css-tricks.com/snippets/sass/power-function/
-@function power($number, $exponent) {
-  $value: 1;
-  @if($exponent > 0) {
-    @for $i from 1 through $exponent {
-      $value: $value * $number;
+  // if 0
+  @if($count == 0) { 
+    $result: variables.$base 
+  }
+  
+  // Calculate modular scale value
+  @else {
+    @if type-of(variables.$ratio) == string { 
+      $result: variables.$base * power.power(map-get(scales.$scales, variables.$ratio), $count) 
+    }
+    @else if type-of(variables.$ratio) == number { 
+      $result: variables.$base * power(variables.$ratio, $count) 
+    }
+    @else { 
+      @error "Please use a value from the $scales map or a number" 
     }
   }
-  @return $value;
-}
 
-// CALCULATES a step in a modular scale
-@function mod($count) {
-  @if type-of($ratio) == string {
-    @return $base * power(map-get($scales, $ratio), $count);
-  } @else if type-of($ratio) == number {
-    @return $base * power($ratio, $count);
-  } @else {
-    @error "Please use a value from the $scales map or a number";
-  } 
+  // if round...
+  @if(variables.$round) { 
+    @return floor($result) 
+  }
+  @else { 
+    @return $result 
+  }
+
 }

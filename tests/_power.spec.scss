@@ -1,0 +1,11 @@
+@import 'true';
+@import '../src/power';
+
+@include describe('power function') {
+  @include it('should return a power of x') {
+    @include assert-equal(power(3,2), 9);
+    @include assert-equal(power(4,4), 256);
+    @include assert-equal(power(9,2), 81);
+    @include assert-equal(power(3,3), 27);
+  }
+}

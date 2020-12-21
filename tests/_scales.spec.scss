@@ -1,0 +1,11 @@
+@import 'true';
+@import '../src/scales';
+
+@include describe('scales map') {
+  @include it('should have 6 members') {
+    @include assert-equal(length($scales), 6)
+  }
+  @include it('octave is 2') {
+    @include assert-equal(map-get($scales, 'octave'), 2)
+  }
+}
