@@ -1,4 +1,4 @@
 // Variables
-$base: 1px !default; // desired base size
-$ratio: goldenRatio !default; // string or number
+$base: 16px !default; // desired base size
+$ratio: 1.618 !default; // string or floating point number..?
 $round: false !default; // whether to round the calculated number or leave as floating point number
