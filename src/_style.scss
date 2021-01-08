@@ -1,38 +1,26 @@
 @use "scales";
 @use "power";
-// @use "variables";
+@use "variables";
 
-// Variables
-$base: 16px !default; // desired base size
-$ratio: 1.618 !default; // string or floating point number..?
-$round: false !default; // whether to round the calculated number or leave as floating point number
-
-// Calculates a step in a modular scale
-@function mod($count/*, $round: variables.$round*/) {
+@function mod($count, $round: variables.$round) {
   
   $result: 0;
 
-  // if 0
   @if($count == 0) { 
     $result: variables.$base 
-  }
-  
-  // Calculate modular scale value
-  @else {
-    @if type-of($ratio) == string { 
-      $result: $base * power.power(map-get(scales.$scales, $ratio), $count) 
+  } @else {
+    @if type-of(variables.$ratio) == string { 
+      $result: variables.$base * power.power(map-get(scales.$scales, variables.$ratio), $count) 
     }
-    @else if type-of($ratio) == number { 
-      $result: $base * power.power($ratio, $count) 
+    @else if type-of(variables.$ratio) == number { 
+      $result: variables.$base * power.power(variables.$ratio, $count) 
     }
   }
 
-  @if($round) { 
+  @if(variables.$round) {
     @return floor($result) 
-  }
-  @else { 
+  } @else { 
     @return $result 
   }
 
 }
-

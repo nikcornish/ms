@@ -1,4 +1,5 @@
-// Variables
-$base: 16px !default; // desired base size
-$ratio: 1.618 !default; // string or floating point number..?
-$round: false !default; // whether to round the calculated number or leave as floating point number
+@use 'scales';
+
+$base: 16px !default;
+$ratio: map-get(scales.$scales, goldenRatio) !default; // can be string, floating point number, or map-get call
+$round: false !default; // whether to globally output rounded or floating point values
