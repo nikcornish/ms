@@ -1,5 +1,0 @@
-@use 'scales';
-
-$base: 16px !default;
-$ratio: map-get(scales.$scales, goldenRatio) !default; // can be string, floating point number, or map-get call
-$round: false !default; // whether to globally output rounded or floating point values

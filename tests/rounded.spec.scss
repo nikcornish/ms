@@ -1,0 +1,10 @@
+@use '../src/style' as * with (
+  $round: true
+);
+@import 'true';
+
+@include describe('rounded values') {
+  @include it('should return 25 if $round set to true') {
+    @include assert-equal(mod(1), 25px);
+  }
+}

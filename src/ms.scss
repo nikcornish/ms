@@ -1,0 +1,31 @@
+@use "scales" as *;
+@use "power" as *;
+
+// Variables
+$base: 16px !default;
+$ratio: map-get($scales, goldenRatio) !default;
+$round: false !default;
+
+// Mod function
+@function mod($count, $base: $base, $ratio: $ratio, $round: $round) {
+  
+  $result: 0;
+  
+  @if($count == 0) { 
+    $result: $base 
+  } @else {
+    @if type-of($ratio) == string {
+      $result: $base * power(map-get($scales, $ratio), $count)
+    }
+    @else if type-of($ratio) == number {
+      $result: $base * power($ratio, $count)
+    }
+  }
+
+  @if($round) {
+    @return floor($result) 
+  } @else { 
+    @return $result 
+  }
+
+}

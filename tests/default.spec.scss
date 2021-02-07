@@ -1,9 +1,7 @@
+@use '../src/style' as *;
 @import 'true';
-@import '../src/style';
 
-$round: false;
-
-@include describe('styles floating point') {
+@include describe('floating point values') {
   @include it('should return 25.888px') {
     @include assert-equal(mod(1), 25.888px);
   }

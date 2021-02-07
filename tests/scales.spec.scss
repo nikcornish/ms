@@ -5,6 +5,9 @@
   @include it('should have 6 members') {
     @include assert-equal(length($scales), 6)
   }
+  @include it('goldenRatio is 1.618') {
+    @include assert-equal(map-get($scales, 'goldenRatio'), 1.618)
+  }
   @include it('octave is 2') {
     @include assert-equal(map-get($scales, 'octave'), 2)
   }

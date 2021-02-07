@@ -2,17 +2,10 @@
  * @jest-environment node
  */
 
-const path = require('path')
-const sassTrue = require('sass-true')
-const glob = require('glob')
- 
-describe('Sass', () => {
-  // Find all of the Sass files that end in `*.spec.scss` in any directory of this project.
-  // I use path.resolve because True requires absolute paths to compile test files.
-  const sassTestFiles = glob.sync(path.resolve(process.cwd(), 'tests/**/*.spec.scss'))
- 
-  // Run True on every file found with the describe and it methods provided
-  sassTestFiles.forEach(file =>
-    sassTrue.runSass({ file }, { describe, it })
-  )
-})
+var path = require('path');
+var sassTrue = require('sass-true');
+
+sassTrue.runSass({ file: path.join(__dirname, 'power.spec.scss') }, { describe, it });
+sassTrue.runSass({ file: path.join(__dirname, 'scales.spec.scss') }, { describe, it });
+sassTrue.runSass({ file: path.join(__dirname, 'default.spec.scss') }, { describe, it });
+sassTrue.runSass({ file: path.join(__dirname, 'rounded.spec.scss') }, { describe, it });

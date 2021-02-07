@@ -1,5 +1,6 @@
+@use '../src/power' as *;
 @import 'true';
-@import '../src/power';
+
 
 @include describe('power function') {
   @include it('should calculate a power given a number and exponent, then return a floating point number') {
