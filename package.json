@@ -7,8 +7,13 @@
     "test": "jest --watch",
     "dev": "sass src/_debug.scss:dist/_debug.css --watch"
   },
-  "author": "",
+  "author": "Nik Cornish",
   "license": "ISC",
+  "keywords": [
+    "modular scale", 
+    "sass", 
+    "sass-true"
+  ],
   "devDependencies": {
     "sass": "^1.30.0",
     "sass-true": "^6.0.1"
