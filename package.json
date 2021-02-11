@@ -9,8 +9,8 @@
   "author": "Nik Cornish",
   "license": "ISC",
   "keywords": [
-    "modular scale", 
-    "sass", 
+    "modular scale",
+    "sass",
     "sass-true"
   ],
   "devDependencies": {
