@@ -1,19 +1,16 @@
-@use '../src/power' as *;
+@use '../src/functions' as *;
 @import 'true';
 
 
 @include describe('power function') {
   @include it('should calculate a power given a number and exponent, then return a floating point number') {
-    
     // positive exponents
     @include assert-equal(power(3,2), 9);
     @include assert-equal(power(3,3), 27);
-    @include assert-equal(power(4,4), 256);
-    
+    @include assert-equal(power(4,4), 256); 
     // negatives exponents
     @include assert-equal(power(5,-3), 0.008);
     @include assert-equal(power(2,-1), 0.5);
     @include assert-equal(power(8,-3), 0.001953125);
-
   }
 }

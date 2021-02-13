@@ -2,8 +2,8 @@
 @import '../src/scales';
 
 @include describe('scales map') {
-  @include it('should have 6 members') {
-    @include assert-equal(length($scales), 6)
+  @include it('should have 12 members') {
+    @include assert-equal(length($scales), 12)
   }
   @include it('goldenRatio is 1.618') {
     @include assert-equal(map-get($scales, 'goldenRatio'), 1.618)

@@ -1,6 +1,6 @@
 {
   "name": "@nikcornish/ms",
-  "version": "1.0.11",
+  "version": "1.0.12",
   "description": "Don't forget: Using sass from command line implies dart-sass installed as a dependency. @use and @forward syntax are only supported in dart-sass.",
   "scripts": {
     "test": "jest --watch",

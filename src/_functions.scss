@@ -15,21 +15,17 @@
   @return $value;
 }
 
-// Mod function
-@function mod($count, $base: variables.$base, $ratio: variables.$ratio, $round: variables.$round) {
-  
+// Function returns a step in a modular scale
+@function mod($count, $config: variables.$config) {
   $result: 0;
-  
-  @if($count == 0) { 
-    $result: $base 
+  @if($count == 0) {
+    $result: map-get($config, base)
   } @else {
-    $result: $base * power($ratio, $count)
+    $result: map-get($config, base) * power(map-get($config, ratio), $count);
   }
-
-  @if($round) {
-    @return floor($result) 
-  } @else { 
-    @return $result 
+  @if(map-get($config, round)) {
+    @return floor($result);
+  } @else {
+    @return $result;
   }
-  
 }

@@ -1,4 +1,9 @@
-// Variables
 $base: 16px !default;
 $ratio: 1.618 !default;
 $round: false !default;
+
+$config: (
+  base: $base, 
+  ratio: $ratio, 
+  round: $round
+);

@@ -1,8 +1,8 @@
-@use '../src/style' as *;
+@use '../src/ms';
 @import 'true';
 
 @include describe('floating point values') {
   @include it('should return 25.888px') {
-    @include assert-equal(mod(1), 25.888px);
+    @include assert-equal(ms.mod(1), 25.888px);
   }
 }
